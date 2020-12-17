@@ -68,7 +68,7 @@ def predict():
         elif x == [0]:
             clear +=1
         else:
-            raise EnvironmentError
+            raise EOFError
     if rainy > clear :
         print("Yes, Its rainy!")
         return render('result.html',pred='rainy')
