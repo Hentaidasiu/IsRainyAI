@@ -14,12 +14,12 @@ from sklearn.naive_bayes import GaussianNB
 
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv("churn.csv")
+data = pd.read_csv("Thai_rain_clean.csv")
 
-x = pd.DataFrame(data,columns=['Cloud Type', 'Precip Type', 'Temperature (C)', 'Apparent Temperature (C)',
-       'Humidity', 'Wind Speed (km/h)', 'Wind Bearing (degrees)',
-       'Visibility (km)', 'Pressure (millibars)'])
-y = pd.DataFrame(data,columns=['Daily Summary'])
+x = pd.DataFrame(data,columns=['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation',
+       'Sunshine', 'WindGustSpeed', 'WindSpeed9am','WindSpeed3pm', 'Humidity9am', 
+       'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Temp9am', 'Temp3pm', 'RainToday'])
+y = pd.DataFrame(data,columns=['RainTomorrow'])
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=0)
 
 sc = StandardScaler()
@@ -28,15 +28,15 @@ x_train_std = sc.transform(x_train)
 x_test_std  = sc.transform(x_test)
 
 #NeuralNetwork
-clf = MLPClassifier(solver='lbfgs', hidden_layer_sizes=(10, ), random_state=1)
+clf = MLPClassifier(solver='lbfgs', hidden_layer_sizes=(10, ), random_state=0)
 clf.fit(x_train_std, y_train)
 
 #RandomForest
 rfc = RandomForestClassifier(n_estimators=15, max_depth=None, min_samples_split=2, random_state=0)
 rfc.fit(x_train_std, y_train)
-rfc_predict = rfc.predict(x_test)
-print(rfc_predict)
-print("dd")
+# rfc_predict = rfc.predict(x_test)
+# print(rfc_predict)
+# print("dd")
 
 # #DecisionTree
 dt = DecisionTreeClassifier(criterion="entropy")
