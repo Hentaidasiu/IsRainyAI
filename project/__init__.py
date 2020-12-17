@@ -70,10 +70,8 @@ def predict():
         else:
             raise EOFError
     if rainy > clear :
-        print("Yes, Its rainy!")
-        return render('result.html',pred='rainy')
+        # print("Yes, Its rainy!")
+        return render_template('result.html',pred='It will rain tomorrow!!')
     else :
-        print("No, Its clear!")
-        return render('result.html',pred='clear')
-    
-    return "ok"
+        # print("No, Its clear!")
+        return render_template('result.html',pred='Tomorrow the weather will be clear!!')

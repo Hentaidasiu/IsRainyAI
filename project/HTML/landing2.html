@@ -1,1 +1,183 @@
-<h1>This is landing2</h1>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" type="image/svg" href="/images/avatar.svg" />
+        <title>Cloud-Predic</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/cc4a7a1701.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" >
+        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <link rel="stylesheet" href="output.html"/> 
+ 
+    </head>
+    <style>
+        body {
+          font-family:'Times New Roman', Times, serif;
+          padding: 8px;
+          background-color: rgb(163, 190, 241);
+        
+          font-weight: bold;
+          /* background-repeat: no-repeat; */
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        .row {
+          display: -ms-flexbox; /* IE10 */
+          display: flex;
+          -ms-flex-wrap: wrap; /* IE10 */
+          flex-wrap: wrap;
+          margin: 0 -16px;
+        }
+        .col-25 {
+        -ms-flex: 25%; /* IE10 */
+          flex: 25%;
+        }
+        
+        .col-50 {
+            -ms-flex: 50%; /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%; /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #e9a8a8d7;
+            padding: 5px 50px 15px 50px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+            color: darkblue;
+        }
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: #810d05;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #d84f4f;
+        }
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+        h2{
+            color:rgba(5, 5, 99, 0.986);
+            
+        }
+        p{
+            color: rgb(16, 40, 85);
+            font-weight: bold;
+        }
+
+
+    </style>
+<body>
+    <center>
+        <br>
+        <h2>เรน พรีดิคท์ชั่น!!</h2>
+        <br>
+    </center>
+        <div class="row">
+            <div class="container">
+                <form action="/predict" method="POST">
+                    <div class="row">
+                        <div class="col-50">
+                            <label for="MinTemp"></i>MinTemp(Celsius)</label>
+                            <input type="float" name="MinTemp" id="MinTemp">
+                            <label for="MaxTemp"></i>MaxTemp(Celsius)</label>
+                            <input type="float" name="MaxTemp" id="MaxTemp">
+                            <label for="Rainfall"></i>Rainfall(Millimeter)</label>
+                            <input type="float" name="Rainfall" id="Rainfall">
+                            <label for="Evaporation"></i>Evaporation(Millimeter)</label>
+                            <input type="float" name="WindGustSpeed" id="WindGustSpeed">
+                            <label for="expmonth">Sunshine(Hour)</label>
+                            <input type="float" name="Evaporation" id="Evaporation">
+                            <label for="WindGustSpeed"></i>WindGustSpeed(Kilometer/Hour)</label>
+                            <input type="float" name="Sunshine" id="Sunshine">
+                            <label for="WindSpeed9am"></i>WindSpeed 9 am(Kilometer/Hour)</label>
+                            <input type="float" name="WindSpeed9am" id="WindSpeed9am">
+                            <label for="WindSpeed3pm"></i>WindSpeed 3 pm(Kilometer/Hour)</label>
+                            <input type="float" name="WindSpeed3pm" id="WindSpeed3pm">
+                        </div>
+                        <div class="col-50">
+                            <label for="cname">Humidity 9 am(Percentage)</label>
+                            <input type="float" name="Humidity9am" id="Humidity 9 am">
+                            <label for="ccnum">Humidity 3 pm(Percentage)</label>
+                            <input type="float" name="Humidity3pm" id="Humidity 3 pm">
+                            <label for="expmonth">Pressure 9 am (Hpa)</label>
+                            <input type="float" name="Pressure9am" id="Pressure 9 am">
+                            <label for="expmonth">Pressure 3 pm(Hpa)</label>
+                            <input type="float" name="Pressure3pm" id="Pressure 3 pm">
+                            <label for="expmonth">Temp 9 am(Celsius)</label>
+                            <input type="float" name="Temp9am" id="Temp 9 am">
+                            <label for="expmonth">Temp 3 pm(Celsius)</label>
+                            <input type="float" name="Temp3pm" id="Temp 3 pm">
+                            <label for="RainToday">RainToday</label>
+                            <select id="RainToday" name="RainToday">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                        </div>
+                    </div>
+                    <div>
+                        <input  type="submit" value="Predict" class="btn">
+                        <!-- <button type="submit" class="btn btn-success col-xs-4 col-sm-4 col-lg-6 btn-submit" >Predict</button> -->
+                    </div> 
+                </form>
+            </div>
+        </div>
+</body>
+</html>
